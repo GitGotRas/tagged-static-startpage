@@ -1,0 +1,107 @@
+.topbar-link {
+  margin-inline-end: auto;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  transition: background 120ms ease;
+}
+
+.topbar-link:hover,
+.topbar-link:focus-visible {
+  background: var(--panel-hover);
+}
+
+.topbar-link:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+.choose-hero {
+  display: flex;
+  gap: 24px;
+  min-block-size: 0;
+  justify-content: center;
+}
+
+.choose-sidebar {
+  inline-size: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--stroke);
+  border-radius: 10px;
+  background: var(--panel);
+  backdrop-filter: blur(12px);
+  align-self: start;
+  position: sticky;
+  inset-block-start: 68px;
+}
+
+.choose-sidebar-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-shadow: none;
+}
+
+.choose-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.choose-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-block-size: 20px;
+  padding-inline: 8px 6px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--text);
+  background: transparent;
+  text-align: start;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 100ms ease, border-color 100ms ease;
+}
+
+.choose-chip:hover {
+  border-color: var(--stroke);
+  background: var(--panel-hover);
+}
+
+.choose-chip.active {
+  color: var(--active-fg);
+  background: var(--active-bg);
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.choose-chip span:last-child {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.choose-chip.active span:last-child {
+  color: inherit;
+}
+
+@media (max-width: 800px) {
+  .choose-hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .choose-sidebar {
+    inline-size: 100%;
+    max-block-size: 200px;
+  }
+}

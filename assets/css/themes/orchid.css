@@ -1,0 +1,9 @@
+:root {
+  --tile-bg: rgba(231, 205, 239, 0.24);
+  --tile-hover-bg: rgba(241, 224, 247, 0.76);
+  --tile-fg: #36213e;
+  --tile-hover-fg: #1d1024;
+  --menu-bg: rgba(38, 22, 48, 0.86);
+  --active-bg: #ecd8f3;
+  --active-fg: #25122d;
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#142027">
+    <meta name="author" content="GitGotRas">
+    <title>Choose Theme</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link id="bgPreload" rel="preload" as="image" href="images/andreas-gucklhorn-EDxp0LDjKAM-unsplash.jpg" fetchpriority="high">
+    <link rel="stylesheet" href="assets/css/webfont.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link id="themeStylesheet" rel="stylesheet" href="assets/css/themes/mono.css">
+    <link rel="stylesheet" href="assets/css/choose-theme.css">
+  </head>
+  <body>
+    <!-- Credits: https://github.com/GitGotRas -->
+    <a href="#content" class="skip-link">Skip to content</a>
+    <div class="background" aria-hidden="true"></div>
+    <main id="content" class="page-shell" tabindex="-1">
+      <header class="topbar" aria-label="Quick actions">
+        <a class="topbar-link" href="index.html">Startpage</a>
+        <div class="tag-menu">
+          <button class="chrome-menu-button" id="tagToggle" type="button" popovertarget="tagDropdown" popovertargetaction="toggle" aria-expanded="false" aria-controls="tagDropdown" aria-label="Tags" title="Tags">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8h.01M12 12h.01M12 16h.01"/></svg>
+          </button>
+          <div class="tag-dropdown" id="tagDropdown" popover="auto" aria-label="Tags"></div>
+        </div>
+      </header>
+
+      <div class="choose-hero">
+        <aside class="choose-sidebar" aria-label="Theme list">
+          <h2 class="choose-sidebar-title">Themes</h2>
+          <div class="choose-list" id="themeList"></div>
+        </aside>
+
+        <section class="hero" aria-labelledby="greeting">
+          <h1 id="greeting">HOME</h1>
+          <div class="sites" id="sites" aria-live="polite"></div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-clock">
+          <time id="clock">00:00</time>
+        </div>
+      </footer>
+    </main>
+
+    <script src="assets/data/config.js"></script>
+    <script src="assets/js/backgrounds.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/choose-theme.js" defer></script>
+  </body>
+</html>
