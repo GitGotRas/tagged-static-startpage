@@ -106,7 +106,9 @@ tagBackgrounds: {
 
 ## Иконки
 
-Иконки используются из локального набора [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet). Классы лежат в `assets/css/webfont.css`.
+Иконки используют локальный шрифт [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet). Входящий в комплект файл
+`assets/css/webfont.css` генерируется из файла `assets/fonts/Symbols-2048-em Nerd Font Complete.woff2`
+и включает классы для глифов, доступных в этом шрифте.
 
 Иконка задаётся через `iconClass`, например:
 

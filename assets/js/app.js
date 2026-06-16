@@ -199,16 +199,40 @@
   function siteCard(site) {
     const opensNewTab = site.newtab ?? config.defaultNewTab;
     const target = opensNewTab ? ' target="_blank" rel="noopener noreferrer"' : "";
-    const iconClass = site.iconClass || "nf-md-link_variant";
+    const icon = siteIcon(site);
 
     return `
       <a class="site-card" href="${escapeAttr(site.url)}"${target} title="${escapeAttr(site.description || site.url)}">
         <span class="icon-tile">
-          <i class="nf ${escapeAttr(iconClass)}" aria-hidden="true"></i>
+          ${icon}
         </span>
         <span class="site-name">${escapeHtml(site.name)}</span>
       </a>
     `;
+  }
+
+  function siteIcon(site) {
+    const iconGlyph = normalizeIconGlyph(site.iconGlyph);
+
+    if (iconGlyph) {
+      return `<span class="nf icon-glyph" aria-hidden="true">${escapeHtml(iconGlyph)}</span>`;
+    }
+
+    const iconClass = site.iconClass || "nf-md-link_variant";
+    return `<i class="nf ${escapeAttr(iconClass)}" aria-hidden="true"></i>`;
+  }
+
+  function normalizeIconGlyph(value) {
+    if (!value) return "";
+
+    const glyph = String(value).trim();
+    const codepoint = glyph.match(/^(?:u\+|\\u\+?|0x)?([a-f0-9]{4,6})$/i)
+      || glyph.match(/^\\u\{([a-f0-9]{4,6})\}$/i);
+
+    if (!codepoint) return glyph;
+
+    const numeric = Number.parseInt(codepoint[1], 16);
+    return Number.isFinite(numeric) ? String.fromCodePoint(numeric) : "";
   }
 
   function renderTags() {

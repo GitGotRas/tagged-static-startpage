@@ -16,7 +16,7 @@ window.STARTPAGE_CONFIG = {
       url: "https://github.com/",
       description: "Code hosting & collaboration",
       tags: ["home", "dev"],
-      iconClass: "nf-dev-github"
+      iconClass: "nf-md-plex"
     },
     {
       name: "Wikipedia",

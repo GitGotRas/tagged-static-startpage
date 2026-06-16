@@ -106,12 +106,14 @@ tagBackgrounds: {
 
 ## Icons
 
-Icons use local [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet) classes from `assets/css/webfont.css`.
+Icons use the local [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet) font. The bundled
+`assets/css/webfont.css` is generated from `assets/fonts/Symbols-2048-em Nerd Font Complete.woff2`
+and includes classes for the glyphs available in that font.
 
 Set the icon with `iconClass`, for example:
 
 ```js
-iconClass: "nf-md-cloud"
+iconClass: "nf-dev-github_full"
 ```
 
 ## Themes
